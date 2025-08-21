@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bimbingan dan Konseling - SMA Negeri 1 Cluring</title>
+    <title>Konseling Individu - BK SMA Negeri 1 Cluring</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -32,6 +32,9 @@
             color: white;
             padding: 20px 0;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .header-content {
@@ -82,12 +85,13 @@
 
         /* Hero Section */
         .hero {
-            background: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            background: url('https://images.unsplash.com/photo-1545239351-ef35f43d514b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
             height: 500px;
             display: flex;
             align-items: center;
             position: relative;
             color: white;
+            text-align: center;
         }
 
         .hero::before {
@@ -103,18 +107,19 @@
         .hero-content {
             position: relative;
             z-index: 1;
-            max-width: 700px;
+            max-width: 800px;
+            margin: 0 auto;
             padding: 0 20px;
         }
 
         .hero-content h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 20px;
             font-weight: 700;
         }
 
         .hero-content p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-bottom: 30px;
         }
 
@@ -127,6 +132,7 @@
             border-radius: 30px;
             font-weight: 500;
             transition: background-color 0.3s, transform 0.3s;
+            margin: 5px;
         }
 
         .btn:hover {
@@ -134,8 +140,18 @@
             transform: translateY(-3px);
         }
 
-        /* Cards Section */
-        .cards-section {
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #2c3e50;
+        }
+
+        /* Individual Counseling Detail */
+        .service-detail {
             padding: 80px 0;
             background-color: #fff;
         }
@@ -170,60 +186,245 @@
             margin: 0 auto;
         }
 
-        .cards-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+        .detail-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 60px;
         }
 
-        .card {
-            background: white;
+        .detail-image {
+            flex: 1;
+            min-width: 300px;
             border-radius: 10px;
             overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .detail-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .detail-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .detail-content h2 {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .detail-content p {
+            margin-bottom: 20px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .benefits-list {
+            margin: 25px 0;
+        }
+
+        .benefits-list h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+            font-size: 1.5rem;
+        }
+
+        .benefits-list ul {
+            list-style: none;
+        }
+
+        .benefits-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .benefits-list i {
+            color: #1a6fc4;
+            margin-right: 10px;
+            margin-top: 5px;
+            font-size: 1.2rem;
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: 60px 0;
+            background-color: #f5f7fa;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .process-step {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            width: 250px;
+            text-align: center;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s;
         }
 
-        .card:hover {
+        .process-step:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
 
-        .card-img {
+        .step-number {
+            background: #1a6fc4;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-weight: bold;
+        }
+
+        .process-step h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        /* Counselor Section */
+        .counselor-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .counselor-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .counselor-card {
+            background: #f5f7fa;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 300px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .counselor-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .counselor-img {
             height: 200px;
             overflow: hidden;
         }
 
-        .card-img img {
+        .counselor-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s;
         }
 
-        .card:hover .card-img img {
-            transform: scale(1.1);
+        .counselor-info {
+            padding: 20px;
+            text-align: center;
         }
 
-        .card-content {
-            padding: 25px;
-        }
-
-        .card-content h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
+        .counselor-info h3 {
             color: #2c3e50;
+            margin-bottom: 5px;
         }
 
-        .card-content p {
+        .counselor-info p {
             color: #7f8c8d;
+            margin-bottom: 15px;
+        }
+
+        /* Testimonial Section */
+        .testimonial-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1a6fc4 0%, #2c3e50 100%);
+            color: white;
+        }
+
+        .testimonials {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonial {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            width: 300px;
+            backdrop-filter: blur(10px);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            text-align: center;
+            background: #f5f7fa;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 2.2rem;
+            color: #2c3e50;
             margin-bottom: 20px;
         }
 
-        .card-icon {
-            font-size: 2.5rem;
-            color: #1a6fc4;
-            margin-bottom: 15px;
+        .cta-content p {
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
         }
 
         /* Contact Section */
@@ -298,7 +499,8 @@
         }
 
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select {
             width: 100%;
             padding: 12px 15px;
             border: 1px solid #ddd;
@@ -320,6 +522,7 @@
             font-size: 1rem;
             font-weight: 500;
             transition: background 0.3s;
+            width: 100%;
         }
 
         .submit-btn:hover {
@@ -365,16 +568,21 @@
             nav ul {
                 margin-top: 20px;
                 justify-content: center;
+                flex-wrap: wrap;
             }
 
             nav ul li {
-                margin: 0 10px;
+                margin: 5px 10px;
             }
 
             .hero-content h2 {
                 font-size: 2rem;
             }
 
+            .detail-container {
+                flex-direction: column;
+            }
+            
             .contact-container {
                 flex-direction: column;
             }
@@ -382,6 +590,16 @@
             .contact-info {
                 padding-right: 0;
                 margin-bottom: 40px;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .process-step {
+                width: 100%;
+                max-width: 300px;
             }
         }
     </style>
@@ -399,9 +617,10 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#home">Beranda</a></li>
-                    <li><a href="#layanan">Layanan</a></li>
-                    <li><a href="#tentang">Tentang</a></li>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="index.html#layanan">Layanan</a></li>
+                    <li><a href="#proses">Proses Konseling</a></li>
+                    <li><a href="#konselor">Konselor</a></li>
                     <li><a href="#kontak">Kontak</a></li>
                 </ul>
             </nav>
@@ -409,105 +628,220 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero">
         <div class="container hero-content">
-            <h2>Layanan Bimbingan dan Konseling</h2>
-            <p>Membantu siswa mengembangkan potensi diri secara optimal, mengatasi masalah, dan merencanakan masa depan</p>
-            <a href="#kontak" class="btn">Hubungi Kami</a>
+            <h2>Konseling Individu</h2>
+            <p>Layanan konseling satu-satu untuk membantu siswa mengatasi masalah pribadi, sosial, belajar, dan karir</p>
+            <div>
+                <a href="#kontak" class="btn">Jadwalkan Konseling</a>
+                <a href="#proses" class="btn btn-outline">Pelajari Prosesnya</a>
+            </div>
         </div>
     </section>
 
-    <!-- Cards Section -->
-    <section class="cards-section" id="layanan">
+    <!-- Individual Counseling Detail Section -->
+    <section class="service-detail">
         <div class="container">
             <div class="section-title">
-                <h2>Layanan Kami</h2>
-                <p>Kami menyediakan berbagai layanan bimbingan dan konseling untuk mendukung perkembangan siswa</p>
+                <h2>Konseling Individu</h2>
+                <p>Layanan konseling personal untuk membantu mengatasi masalah pribadi siswa</p>
             </div>
-            <div class="cards-container">
-                <!-- Card 1 -->
-                <div class="card">
-                    <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Konseling Individu">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-icon">
-                            <i class="fas fa-user-friends"></i>
-                        </div>
-                        <h3>Konseling Individu</h3>
-                        <p>Layanan konseling satu-satu untuk membantu siswa mengatasi masalah pribadi, sosial, belajar, dan karir.</p>
+            
+            <div class="detail-container">
+                <div class="detail-image">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Konseling Individu Detail">
+                </div>
+                
+                <div class="detail-content">
+                    <h2>Layanan Konseling Individu</h2>
+                    <p>Konseling individu adalah layanan bimbingan konseling yang diberikan secara personal antara konselor dan siswa. Layanan ini bertujuan untuk membantu siswa dalam mengatasi berbagai permasalahan pribadi, sosial, belajar, maupun karir yang dialami.</p>
+                    
+                    <p>Di SMA Negeri 1 Cluring, kami memahami bahwa setiap siswa memiliki tantangan dan permasalahan yang unik. Melalui konseling individu, kami memberikan perhatian penuh dan pendekatan yang disesuaikan dengan kebutuhan masing-masing siswa.</p>
+                    
+                    <div class="benefits-list">
+                        <h3>Manfaat Konseling Individu</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Memberikan ruang aman dan nyaman untuk berbicara secara terbuka</li>
+                            <li><i class="fas fa-check-circle"></i> Membantu mengidentifikasi masalah dan sumbernya</li>
+                            <li><i class="fas fa-check-circle"></i> Mengembangkan strategi untuk mengatasi masalah</li>
+                            <li><i class="fas fa-check-circle"></i> Meningkatkan kesadaran diri dan pemahaman tentang potensi</li>
+                            <li><i class="fas fa-check-circle"></i> Membantu pengambilan keputusan yang tepat</li>
+                            <li><i class="fas fa-check-circle"></i> Meningkatkan keterampilan coping dan resilience</li>
+                        </ul>
                     </div>
                 </div>
+            </div>
+            
+            <div class="detail-container">
+                <div class="detail-content">
+                    <h2>Masalah yang Dapat Dibantu melalui Konseling Individu</h2>
+                    <p>Konseling individu dapat membantu siswa dalam mengatasi berbagai permasalahan, termasuk:</p>
+                    
+                    <div class="benefits-list">
+                        <ul>
+                            <li><i class="fas fa-arrow-right"></i> <strong>Masalah Akademik:</strong> Kesulitan belajar, manajemen waktu, motivasi belajar, dan persiapan ujian</li>
+                            <li><i class="fas fa-arrow-right"></i> <strong>Masalah Pribadi:</strong> Kepercayaan diri, identitas diri, pengelolaan emosi, dan stres</li>
+                            <li><i class="fas fa-arrow-right"></i> <strong>Masalah Sosial:</strong> Hubungan dengan teman, keluarga, guru, dan pergaulan</li>
+                            <li><i class="fas fa-arrow-right"></i> <strong>Perencanaan Masa Depan:</strong> Pemilihan jurusan, karir, dan pendidikan lanjutan</li>
+                            <li><i class="fas fa-arrow-right"></i> <strong>Masalah Perilaku:</strong> Kebiasaan tidak produktif, prokrastinasi, dan pengambilan keputusan</li>
+                        </ul>
+                    </div>
+                    
+                    <p>Konseling individu di SMA Negeri 1 Cluring dilakukan oleh konselor profesional yang berpengalaman dalam menangani berbagai masalah remaja. Setiap sesi konseling bersifat rahasia dan terjamin kerahasiaannya.</p>
+                </div>
+                
+                <div class="detail-image">
+                    <img src="https://images.unsplash.com/photo-1545239351-ef35f43d514b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Masalah Konseling">
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Card 2 -->
-                <div class="card">
-                    <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Konseling Kelompok">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3>Konseling Kelompok</h3>
-                        <p>Layanan konseling dalam kelompok kecil untuk berbagi pengalaman dan mencari solusi bersama.</p>
-                    </div>
+    <!-- Process Section -->
+    <section class="process-section" id="proses">
+        <div class="container">
+            <div class="section-title">
+                <h2>Proses Konseling Individu</h2>
+                <p>Tahapan dalam proses konseling individu di SMA Negeri 1 Cluring</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Pendaftaran</h3>
+                    <p>Siswa mendaftar melalui guru BK, website, atau langsung ke ruang BK</p>
                 </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Penjadwalan</h3>
+                    <p>Menentukan jadwal sesi konseling yang sesuai dengan waktu siswa dan konselor</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Sesi Konseling</h3>
+                    <p>Pertemuan tatap muka antara konselor dan siswa untuk membahas permasalahan</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Follow-up</h3>
+                    <p>Pemantauan perkembangan dan evaluasi hasil konseling</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Card 3 -->
-                <div class="card">
-                    <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1434626881859-194d67b2b86f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bimbingan Karir">
+    <!-- Counselor Section -->
+    <section class="counselor-section" id="konselor">
+        <div class="container">
+            <div class="section-title">
+                <h2>Konselor Kami</h2>
+                <p>Tim konselor profesional siap membantu Anda</p>
+            </div>
+            
+            <div class="counselor-cards">
+                <div class="counselor-card">
+                    <div class="counselor-img">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Konselor 1">
                     </div>
-                    <div class="card-content">
-                        <div class="card-icon">
-                            <i class="fas fa-briefcase"></i>
-                        </div>
-                        <h3>Bimbingan Karir</h3>
-                        <p>Layanan bimbingan untuk membantu siswa merencanakan masa depan dan karir sesuai minat dan bakat.</p>
+                    <div class="counselor-info">
+                        <h3>Andis Dwi Saputro, S.Sos.I</h3>
+                        <p>Konselor Pendidikan</p>
+                        <p>Spesialisasi: Masalah Akademik</p>
                     </div>
                 </div>
+                
+                <div class="counselor-card">
+                    <div class="counselor-img">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Konselor 2">
+                    </div>
+                    <div class="counselor-info">
+                        <h3>Drs. Sy. Hadi</h3>
+                        <p>Konselor Psikologi</p>
+                        <p>Spesialisasi: Masalah Pribadi</p>
+                    </div>
+                </div>
+                
+                <div class="counselor-card">
+                    <div class="counselor-img">
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Konselor 3">
+                    </div>
+                    <div class="counselor-info">
+                        <h3>Mia Indriyani, S.Pd</h3>
+                        <p>Konselor Karir</p>
+                        <p>Spesialisasi: Perencanaan Masa Depan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Card 4 -->
-                <div class="card">
-                    <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bimbingan Belajar">
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Testimoni Siswa</h2>
+                <p>Pengalaman siswa yang telah mengikuti konseling individu</p>
+            </div>
+            
+            <div class="testimonials">
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "Konseling individu sangat membantu saya dalam mengatasi kecemasan saat ujian. Sekarang saya lebih percaya diri dan bisa mengelola stres dengan baik."
                     </div>
-                    <div class="card-content">
-                        <div class="card-icon">
-                            <i class="fas fa-book"></i>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Siswa 1">
                         </div>
-                        <h3>Bimbingan Belajar</h3>
-                        <p>Layanan bimbingan untuk meningkatkan prestasi akademik dan mengembangkan strategi belajar efektif.</p>
+                        <div class="author-info">
+                            <h4>Renata</h4>
+                            <p>Kelas XII.2</p>
+                        </div>
                     </div>
                 </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "Berkat konseling individu, saya jadi lebih memahami minat dan bakat saya. Sekarang saya sudah menentukan jurusan kuliah yang tepat untuk masa depan saya."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Siswa 2">
+                        </div>
+                        <div class="author-info">
+                            <h4>Adi Pratama</h4>
+                            <p>Kelas XII IPS 1</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "Saya mengalami masalah dalam pergaulan dan sulit beradaptasi. Setelah konseling, saya menjadi lebih terbuka dan punya teman yang mendukung."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Siswa 3">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sinta Dewi</h4>
+                            <p>Kelas X IPA 3</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Card 5 -->
-                <div class="card">
-                    <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bimbingan Sosial">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-icon">
-                            <i class="fas fa-handshake"></i>
-                        </div>
-                        <h3>Bimbingan Sosial</h3>
-                        <p>Layanan bimbingan untuk mengembangkan kemampuan berinteraksi dan beradaptasi dengan lingkungan sosial.</p>
-                    </div>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="card">
-                    <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bimbingan Pribadi">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <h3>Bimbingan Pribadi</h3>
-                        <p>Layanan bimbingan untuk membantu siswa memahami diri sendiri dan mengembangkan potensi pribadi.</p>
-                    </div>
-                </div>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Butuh Bantuan?</h2>
+                <p>Jangan ragu untuk menjadwalkan sesi konseling individu. Tim konselor kami siap membantu Anda mengatasi masalah dan mengembangkan potensi diri.</p>
+                <a href="#kontak" class="btn">Jadwalkan Konseling Sekarang</a>
             </div>
         </div>
     </section>
@@ -524,29 +858,45 @@
                     <p><i class="fas fa-phone"></i> 081358228225</p>
                     <p><i class="fas fa-envelope"></i> andisdwisaputro@gmail.com</p>
                     <p><i class="fas fa-clock"></i> Senin - Jumat: 08:00 - 15:00</p>
+                    <p><i class="fas fa-calendar-alt"></i> Sabtu: 08:00 - 12:00 (per janji)</p>
                 </div>
             </div>
             
             <div class="contact-form">
-                <h3>Kirim Pesan</h3>
+                <h3>Formulir Pendaftaran Konseling</h3>
                 <form>
                     <div class="form-group">
-                        <label for="name">Nama</label>
+                        <label for="name">Nama Lengkap</label>
                         <input type="text" id="name" placeholder="Nama lengkap">
+                    </div>
+                    <div class="form-group">
+                        <label for="class">Kelas</label>
+                        <input type="text" id="class" placeholder="Kelas dan jurusan">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Nomor Telepon</label>
+                        <input type="tel" id="phone" placeholder="Nomor yang dapat dihubungi">
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" id="email" placeholder="Alamat email">
                     </div>
                     <div class="form-group">
-                        <label for="subject">Subjek</label>
-                        <input type="text" id="subject" placeholder="Subjek pesan">
+                        <label for="problem">Jenis Permasalahan</label>
+                        <select id="problem">
+                            <option value="">Pilih jenis permasalahan</option>
+                            <option value="academic">Masalah Akademik</option>
+                            <option value="personal">Masalah Pribadi</option>
+                            <option value="social">Masalah Sosial</option>
+                            <option value="career">Perencanaan Karir</option>
+                            <option value="other">Lainnya</option>
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label for="message">Pesan</label>
-                        <textarea id="message" placeholder="Tulis pesan Anda"></textarea>
+                        <label for="message">Deskripsi Singkat Permasalahan</label>
+                        <textarea id="message" placeholder="Jelaskan secara singkat permasalahan yang dihadapi"></textarea>
                     </div>
-                    <button type="submit" class="submit-btn">Kirim Pesan</button>
+                    <button type="submit" class="submit-btn">Kirim Pendaftaran</button>
                 </form>
             </div>
         </div>
